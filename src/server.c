@@ -149,9 +149,47 @@ void get_file(int fd, struct cache *cache, char *request_path)
 {
     ///////////////////
     // IMPLEMENT ME! //
-    ///////////////////
-}
+    ///////////////////    
+    struct file_data *filedata = NULL;
+    char *mime_type;
+    char file_path[4096];
 
+    struct cache_entry *entry = cache_get(cache, request_path);
+
+    // If cache has no entry with the given request_path
+    if (entry == NULL)
+    {
+        // Build a full file path into the ./serverroot directory
+        sprintf(file_path, "./serverroot%s", request_path);
+        
+        filedata = file_load(file_path);
+
+        // If user inputs '/' as the path, and serve index.html file
+        if (filedata == NULL)
+        {
+            sprintf(file_path, "./serverroot%s/index.html", request_path);
+            filedata = file_load(file_path);
+            if (filedata == NULL)
+            {
+                resp_404(fd);
+                return;
+            }
+        }
+
+        mime_type = mime_type_get(file_path);
+
+        // Put an entry in cache for the given file
+        cache_put(cache, request_path, mime_type, filedata->data, filedata->size);
+
+        send_response(fd, "HTTP/1.1 200 OK", mime_type, filedata->data, filedata->size);
+        file_free(filedata);
+        return;
+    }
+    
+
+    send_response(fd, "HTTP/1.1 200 OK", entry->content_type, entry->content, entry->content_length);
+    return;
+}
 /**
  * Search for the end of the HTTP header
  * 

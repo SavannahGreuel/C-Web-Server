@@ -109,7 +109,7 @@ _Read through all the main and stretch goals before writing any code to get an o
    If you can't find an appropriate handler, call `resp_404()` instead to give
    them a "404 Not Found" response.
 
-3. Implement the `get_d20()` handler. This will call `send_response()`.
+3. [x] Implement the `get_d20()` handler. This will call `send_response()`.
 
    See above at the beginning of the assignment for what `get_d20()` should pass to `send_response()`.
 
@@ -121,7 +121,7 @@ _Read through all the main and stretch goals before writing any code to get an o
    > communications path. Usually they point to regular files on disk, but in
    > this case it points to an open _socket_ network connection. All of the code to create and use `fd` has been written already, but we still need to pass it around to the points it is used.
 
-4. Implement arbitrary file serving.
+4. [x] Implement arbitrary file serving.
 
    Any other URL should map to the `serverroot` directory and files that lie within. For example:
 
