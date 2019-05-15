@@ -149,7 +149,7 @@ list](https://en.wikipedia.org/wiki/Doubly_linked_list) and a
 
 The hashtable code is already written and can be found in `hashtable.c`.
 
-1. Implement `cache_put()` in `cache.c`.
+1. [x] Implement `cache_put()` in `cache.c`.
 
    Algorithm:
 
@@ -163,7 +163,7 @@ The hashtable code is already written and can be found in `hashtable.c`.
      * Free the cache entry.
      * Ensure the size counter for the number of entries in the cache is correct.
 
-2. Implement `cache_get()` in `cache.c`.
+2. [x] Implement `cache_get()` in `cache.c`.
 
    Algorithm:
 
