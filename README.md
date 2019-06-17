@@ -69,7 +69,7 @@ _Read through all the main and stretch goals before writing any code to get an o
 
 #### Days 1 and 2
 
-1. Implement `send_response()`.
+1. [x] Implement `send_response()`.
 
    This function is responsible for formatting all the pieces that make up an HTTP response into the proper format that clients expect. In other words, it needs to build a complete HTTP response with the given parameters. It should write the response to the string in the `response` variable.
    
@@ -88,7 +88,7 @@ _Read through all the main and stretch goals before writing any code to get an o
 
    You can test whether you've gotten `send_response` working by calling the `resp_404` function from somewhere inside the `main` function, and seeing if the client receives the 404 response. 
 
-2. Examine `handle_http_request()` in the file `server.c`.
+2. [x] Examine `handle_http_request()` in the file `server.c`.
 
    You'll want to parse the first line of the HTTP request header to see if this is a `GET` or `POST` request, and to see what the path is. You'll use this information to decide which handler function to call.
 
@@ -109,7 +109,7 @@ _Read through all the main and stretch goals before writing any code to get an o
    If you can't find an appropriate handler, call `resp_404()` instead to give
    them a "404 Not Found" response.
 
-3. Implement the `get_d20()` handler. This will call `send_response()`.
+3. [x] Implement the `get_d20()` handler. This will call `send_response()`.
 
    See above at the beginning of the assignment for what `get_d20()` should pass to `send_response()`.
 
@@ -121,7 +121,7 @@ _Read through all the main and stretch goals before writing any code to get an o
    > communications path. Usually they point to regular files on disk, but in
    > this case it points to an open _socket_ network connection. All of the code to create and use `fd` has been written already, but we still need to pass it around to the points it is used.
 
-4. Implement arbitrary file serving.
+4. [x] Implement arbitrary file serving.
 
    Any other URL should map to the `serverroot` directory and files that lie within. For example:
 
@@ -149,7 +149,7 @@ list](https://en.wikipedia.org/wiki/Doubly_linked_list) and a
 
 The hashtable code is already written and can be found in `hashtable.c`.
 
-1. Implement `cache_put()` in `cache.c`.
+1. [x] Implement `cache_put()` in `cache.c`.
 
    Algorithm:
 
@@ -163,7 +163,7 @@ The hashtable code is already written and can be found in `hashtable.c`.
      * Free the cache entry.
      * Ensure the size counter for the number of entries in the cache is correct.
 
-2. Implement `cache_get()` in `cache.c`.
+2. [x] Implement `cache_get()` in `cache.c`.
 
    Algorithm:
 
